@@ -1,0 +1,16 @@
+Problem Statement - 2
+
+1) Write SQL to get the number of retailers available in the system.
+Ans:SELECT COUNT(email) FROM sellersignup;
+
+2)Write SQL to get the shoppers counts for each retailer (who purchased)
+Ans:SELECT COUNT(buyer_email) FROM fruit_store WHERE seller_email='$_SESSION['seller_email']';
+
+3)Write SQL to get all the shoppers count
+Ans:SELECT COUNT(phnumber) FROM custsignup;
+
+4)Write SQL to get purchase amount per day wrt to a retailer.
+Ans:SELECT COUNT(seller_email)*100 FROM fruit_store WHERE seller_email='$_SESSION['seller_email']' AND DATE('timestamp')=CURDATE();
+
+5)Write SQL to find top retailer based on the number of purchases
+Ans:SELECT seller_email FROM fruit_store WHERE MAX(SELECT COUNT(seller_email)FROM fruit_store);
